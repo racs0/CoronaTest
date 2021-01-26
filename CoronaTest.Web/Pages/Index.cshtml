@@ -1,0 +1,30 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<h1>
+    Anmeldung zum COVID-19 Schnelltest
+</h1>
+<hr />
+<p>
+    Hier können Sie sich für einen freiwilligen und kostenlosen Corona Schnelltest anmelden.
+</p>
+<div class="row">
+    <form method="post">
+        <div class="form-group col-md-9">
+            <button type="submit" class="btn btn-primary" asp-page-handler="RegistrationBtn_Click">
+                Registrieren
+            </button>
+        </div>
+    </form>
+    <form method="post">
+        <div class="form-group">
+            <button type="submit" class="btn btn-info" asp-page-handler="LogInBtn_Click">
+                Einloggen (bestehender Benutzer)
+            </button>
+        </div>
+    </form>
+</div>
