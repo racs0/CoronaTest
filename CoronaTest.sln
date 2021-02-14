@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoronaTest.ImportConsole", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils", "Utils\Utils.csproj", "{8AA080FA-9AAD-4178-9127-28886712F3A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoronaTest.Web", "CoronaTest.Web\CoronaTest.Web.csproj", "{EA793178-BC46-469C-B88C-86445E07FE19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{8AA080FA-9AAD-4178-9127-28886712F3A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AA080FA-9AAD-4178-9127-28886712F3A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AA080FA-9AAD-4178-9127-28886712F3A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA793178-BC46-469C-B88C-86445E07FE19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA793178-BC46-469C-B88C-86445E07FE19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA793178-BC46-469C-B88C-86445E07FE19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA793178-BC46-469C-B88C-86445E07FE19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

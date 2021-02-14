@@ -20,7 +20,7 @@ namespace CoronaTestPoC
 
             ISmsService smsService = new TwilioSmsService(configuration["Twillio:AccountSid"] , configuration["Twillio:AuthToken"]);
 
-            string to = "+4367761289711";
+            string to = "+436604928390";
             string message = "Hello World from Twilio SMS service.";
 
 

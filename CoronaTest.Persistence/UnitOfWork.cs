@@ -73,7 +73,7 @@ namespace CoronaTest.Persistence
 
         public async ValueTask DisposeAsync()
         {
-            await DisposeAsync();
+            await DisposeAsync(true);
             GC.SuppressFinalize(this);
         }
 
