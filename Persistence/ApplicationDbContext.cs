@@ -24,10 +24,9 @@ namespace CoronaTest.Persistence
                 .AddEnvironmentVariables()
                 .Build();
 
-
             Debug.WriteLine(configuration);
 
-            optionsBuilder.UseSqlite(configuration["ConnectionStrings:DefaultConnection"]);
+            optionsBuilder.UseSqlServer(configuration["ConnectionStrings:DefaultConnection"]);
         }
 
         protected override void OnModelCreating(ModelBuilder builder)

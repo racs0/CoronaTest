@@ -23,6 +23,5 @@ namespace CoronaTest.Core.Entities
 
         public List<VerificationToken> Verifications { get; set; }
 
-
     }
 }

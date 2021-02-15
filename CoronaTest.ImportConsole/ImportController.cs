@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Utils;
 
 namespace CoronaTest.ImportConsole
@@ -11,10 +10,13 @@ namespace CoronaTest.ImportConsole
     {
         public static IEnumerable<Campaign> ReadFromCsv()
         {
-            var csvCampaign = "Products.csv".ReadStringMatrixFromCsv(true);
-            var csvTestCenters = "OrderItems.csv".ReadStringMatrixFromCsv(true);
+            string csvCampaign = "Campaigns.csv";
+            string csvTestCenters = "TestCenters.csv";
 
-            var testCenters = csvTestCenters
+            var matrixCampaigns = MyFile.ReadStringMatrixFromCsv(csvCampaign, true);
+            var matrixTestCenters = MyFile.ReadStringMatrixFromCsv(csvTestCenters,true);
+
+            var testCenters = matrixTestCenters
                 .Select(line => new TestCenter()
                 {
                     Name = line[0],
@@ -22,17 +24,22 @@ namespace CoronaTest.ImportConsole
                     Postalcode = line[2],
                     Street = line[3],
                     SlotCapacity = int.Parse(line[4])
-                }).ToDictionary(key => key.Name);
+                })
+                .ToDictionary(line => line.Name);
 
-            var campaigns = csvCampaign
+            
+
+            var campaigns = matrixCampaigns
                 .Select(c => new Campaign
                 {
                     Name = c[0],
-                    AvailableTestCenters = c[1].Split(',').Select(t => testCenters[t]).ToList(),
-                    From = Convert.ToDateTime(c[2]),
-                    To = Convert.ToDateTime(c[3])
+                    From = Convert.ToDateTime(c[1]),
+                    To = Convert.ToDateTime(c[2]),
+                    AvailableTestCenters = c[3].Split(',').Select(t => testCenters[t]).ToList()
                 })
-                .ToList();
+                .ToArray();
+
+
 
             return campaigns;
         }
